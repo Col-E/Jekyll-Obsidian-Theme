@@ -1,0 +1,70 @@
+{% for static_file in site.static_files %}
+	{% if static_file.path == '/assets/img/logo.png' %}
+		{% assign hasLogo = true %}
+	{% elsif static_file.path == '/assets/img/favicon.png' %}
+		{% assign hasFavicon = true %}
+	{% endif %}
+{% endfor %}
+{% if site.data.sitemap contains "toc" %}
+	{% assign hasSitemap = true %}
+{% endif %}
+<html>
+<head>
+	<title>
+	{%if page.title %}
+		{{ page.title }}
+	{% else %}
+		{{ site.title }}
+	{% endif %}
+	</title>
+	{% if hasFavicon %}
+	<link rel="shortcut icon" type="image/png" href="/favicon.png">
+	{% endif %}
+	<link rel="stylesheet" href="assets/css/layout.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/syntax-highlight.css">
+    <link rel="stylesheet" href="assets/font/roboto300.css">
+	{% if hasSitemap %}
+	<style>
+	#content {
+		border-left: 1px solid rgb(66, 66, 66);
+	}
+	</style>
+	{% endif %}
+	<meta itemprop="description" name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
+</head>
+<body>
+	<div id="top">
+		<div id="title">
+			<h1>{{ page.title }}</h1>
+			<p><i>{{ page.description }}</i></p>
+		</div>
+		{% if hasLogo %}
+		<div id="logo">
+			<a href="{{ site.logourl }}"><img src="assets/img/logo.png"></a>
+		</div>
+		{% endif %}
+	</div>
+	<div id="container">
+		{% if hasSitemap %}
+		<div id="sidebar">
+		<div class="menu">
+		<div class="scroller">
+		{% for item in site.data.sitemap.toc %}
+			<h3>{{ item.title }}</h3>
+			<ul>
+			{% for entry in item.subfolderitems %}
+				<li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+		</div>
+		</div>
+		</div>
+		{% endif %}
+		<div id="content">
+		{{ content }}
+		</div>
+	</div>
+</body>
+</html>

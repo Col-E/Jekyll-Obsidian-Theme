@@ -1,0 +1,52 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+/* Top navigation bar */
+#top {
+	padding: 1em;
+	margin: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+#logo img {
+	width: auto;
+	max-height: 3.5em;
+}
+#title h1,
+#title p {
+	padding: 0;
+	margin: 0;
+}
+
+/* Main page content (navigation + content) */
+#container {
+	display: flex;
+}
+#sidebar {
+	flex: 0 1 auto;
+	padding: 1em;
+	padding-top: 0em;
+}
+#sidebar .menu {
+	align-self: flex-start;
+	top: 0;
+}
+.scroller {
+  overflow: auto;
+}
+#content {
+	flex: 3;
+	padding: 1em;
+	padding-top: 0em;
+}
+@media(max-width: 767px) {
+	#sidebar {
+		display: none;
+	}
+}

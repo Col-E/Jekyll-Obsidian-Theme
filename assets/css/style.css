@@ -1,0 +1,79 @@
+html, body {
+	background: rgb(35, 35, 35);
+	color: rgb(220, 220, 220);
+	font-family: Roboto;
+}
+
+a {
+	color: rgb(70, 145, 210);
+}
+
+/* ================ Tables ================ */
+table {
+    border: 1px solid rgb(56, 56, 56);
+	padding: 0;
+	border-spacing:0; 
+	border-collapse: collapse;
+}
+table thead {
+    text-align: left;
+    vertical-align: bottom;
+    background: rgb(80, 80, 80);
+    color: white;
+}
+table tr th {
+	padding: 0.5em;
+}
+table tr td {
+	padding: 0.5em;
+}
+table tr:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* ================ Code ================ */
+code {
+	border: 1px solid rgb(56, 56, 56);
+	background: rgb(28, 28, 28);
+	border-radius: 0.2em;
+	counter-reset: line;
+	
+	padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+pre code {
+	border: none;
+	background: inherit;
+	padding: auto;
+}
+.rouge-table {
+	background: rgb(28, 28, 28);
+}
+.rouge-gutter {
+	border-right: 1px solid rgb(56, 56, 56);
+}
+/* ================ Layout ================ */
+#top, 
+#sidebar {
+	background: rgb(28, 28, 28);
+}
+#content {
+	border-top:  1px solid rgb(66, 66, 66);
+}
+.menu h3 {
+	margin-bottom: -0.6em;
+}
+.menu ul {
+	margin-left: -1.4em;
+}
+.menu ul li {
+	padding-bottom: 0.4em;
+}
+.menu ul li a {
+	display: block;
+    width: 100%;
+}
+.menu ul li::marker {
+	content: "";
+}
