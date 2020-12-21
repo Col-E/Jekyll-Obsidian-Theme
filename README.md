@@ -9,13 +9,13 @@ A simplistic dark theme for Jekyll. Comes with code syntax highlighting.
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "obsidian"
+gem "obsidian-theme"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: obsidian
+theme: obsidian-theme
 ```
 
 And then execute:
