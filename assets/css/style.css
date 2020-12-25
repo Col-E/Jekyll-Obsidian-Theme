@@ -28,7 +28,13 @@ table tr td {
 	padding: 0.5em;
 }
 table tr:nth-child(2n) {
-    background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.1);
+}
+table tr td {
+	border-left: 1px solid rgb(56, 56, 56);
+}
+table tr td:first-child {
+	border-left: none;
 }
 
 /* ================ Code ================ */
