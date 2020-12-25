@@ -8,6 +8,9 @@
 {% if site.data.sitemap contains "toc" %}
 	{% assign hasSitemap = true %}
 {% endif %}
+{% if site.baseurl contains "/" %}
+	{% assign hasBaseUrl = true %}
+{% endif %}
 <html>
 <head>
 	<title>
@@ -54,7 +57,11 @@
 			<h3>{{ item.title }}</h3>
 			<ul>
 			{% for entry in item.subfolderitems %}
+				{% if hasBaseUrl %}
+				<li><a href="{{ site.baseurl }}/{{ entry.url }}">{{ entry.page }}</a></li>
+				{% elseif %}
 				<li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+				{% endif %}
 			{% endfor %}
 			</ul>
 		{% endfor %}
