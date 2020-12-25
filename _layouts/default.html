@@ -59,7 +59,7 @@
 			{% for entry in item.subfolderitems %}
 				{% if hasBaseUrl %}
 				<li><a href="{{ site.baseurl }}/{{ entry.url }}">{{ entry.page }}</a></li>
-				{% elsif %}
+				{% else %}
 				<li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
 				{% endif %}
 			{% endfor %}
