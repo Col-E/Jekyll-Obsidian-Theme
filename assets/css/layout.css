@@ -13,7 +13,7 @@ body {
 	height: 100%;
 }
 
-img, video {
+img, video, table, code {
 	max-width: 100%;
 }
 
