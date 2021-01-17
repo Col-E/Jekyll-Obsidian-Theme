@@ -52,6 +52,12 @@ img, video, table, code {
 .scroller {
   overflow: auto;
 }
+#content-wrapper{
+	overflow: scroll;
+	overflow-x: auto;
+	overflow-y: hidden;
+	max-width: 100%;
+}
 #content {
 	flex: 3;
 	padding: 1em;
